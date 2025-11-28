@@ -1,64 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
 body {
-    font-size: 12pt;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt; /*såhär kommenterar man*/
+    .ingredients {
+        font-weight: bold;
+    }
+    #burgerselection {
+        background-color: black;
+        color: white;
+    }
+    button:hover {
+        background-color: lightgreen;
+        cursor: pointer;
+    }
 }
 
-p {
-    color: red;
+section {
+    margin: 25px;
+    padding: 15px;
+    border: 2px dashed;
+}
+
+button {
+    margin: 25px;
+}
+
+.burgeroptions {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+}
+
+.burger { /* burgar sektion */
+    padding: 15px;
+    margin: 15px;
+}
+
+.burgerimage {
+    width: 80%;
 }
 
 h1 {
     font-family: 'Agbalumo';
-    font-size: 36pt;
 }
-main, header, footer, nav ul {
-    max-width: 40rem;
-    margin: 0 auto 0 auto;
-}
-main {
-    background-color: bisque;
-}
-
-/* nav ul li {
-    display: inline-block;
-    background-color: grey;
-    padding: 1em;
-    margin: 1em;
-} */
 
 header {
-    background-image: url("../img/polacks.jpg");
-    background-size: cover;
-    overflow: hidden;
-    width: 100%;
+    margin: 15px;
+    padding: 15px;
     height: 200px;
-    opacity: 0.5;
+    overflow: hidden;
+    position: relative;
+}
+
+header img {
+    width: 100%;
+    opacity: 0.6;
+    height: auto;
 }
 
 header h1 {
-    width:40rem;
-    margin: 0 auto;
-    text-align: center;
-}
-
-nav ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 9.25em);
-    gap: 1em;
-    padding: 0;
-}
-
-nav li {
-    display: block;
-    background-color: grey;
-    padding: 1em;
-}
-
-.Very-good {
-    color: green;
-}
-
-.Master {
-    color: green;
-    font-weight: bold;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    padding: 20px;
 }

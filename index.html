@@ -3,44 +3,48 @@
    <head>
        <title>BestBurger</title> <!--Såhär kommenterar man-->
        <meta charset="utf-8"/>
+       <link rel="stylesheet" type="text/css" href="/public/css/style.css">
    </head>
    <body>
         <header>
+            <img src="https://images.wsj.net/im-65599456?size=1.5" alt="Restaurant Picture" title="Restaurant">
             <h1>Welcome to BestBurger Online</h1>
         </header>
         <main>
-            <section>
+            <section id="burgerselection">
                 <h2>Choose your burger</h2>
                 <p>This is where you select your burger</p>
-                    <div style="display: inline-block">
+                <div class="burgeroptions">
+                    <div class="burger"> 
                         <h3>Sweet Truffle Burger</h3>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGYXFpy_tKpmGfeE5rn5V6GgOaYuylzA3Hg&s" alt="Sweet Truffle Burger" title="Sweet Truffle Burger" style="width: 250px">
-                        <ul>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGYXFpy_tKpmGfeE5rn5V6GgOaYuylzA3Hg&s" alt="Sweet Truffle Burger" title="Sweet Truffle Burger" class="burgerimage">
+                        <ul class="ingredients">
                             <li>Caramelized onion</li>
                             <li>Truffle mayo</li>
                             <li>Bacon</li>
                         </ul>
                     </div>
-                    <div style="display: inline-block">
+                    <div class="burger"> 
                         <h3>Original Burger</h3>
-                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=original" alt="Original Burger" title="Original Burger" style="width: 250px">
-                        <ul>
+                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=original" alt="Original Burger" title="Original Burger" class="burgerimage">
+                        <ul class="ingredients">
                             <li>Cheese</li>
                             <li>Tomato</li>
                             <li>Lettuce</li>
                         </ul>
                     </div>
-                    <div style="display: inline-block">
+                    <div class="burger"> 
                         <h3>BBQ Burger</h3>
-                        <img src="https://www.certifiedangusbeef.com/_next/image?url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FAvocado_Bacon_Barbecue_Burger_6395900f58.jpeg&w=1920&q=75" alt="BBQ Burger" title="BBQ Burger" style="width: 250px">
-                        <ul>
+                        <img src="https://www.certifiedangusbeef.com/_next/image?url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FAvocado_Bacon_Barbecue_Burger_6395900f58.jpeg&w=1920&q=75" alt="BBQ Burger" title="BBQ Burger" class="burgerimage">
+                        <ul class="ingredients">
                             <li>Bacon</li>
                             <li>BBQ sauce</li>
                             <li>Avocado</li>
                         </ul>
                     </div>
+                </div>
             </section>
-            <section>
+            <section id="deliveryinfo">
                 <h2>Delivery information</h2>
                 <p>Enter the necessary information for delivery below</p>
                 <p>
@@ -89,6 +93,5 @@
     <footer>
         <hr>
     </footer>
-    <a href="http://localhost:5173/">Klicka här för att komma till hemsidan</a>
    </body>
 </html>
