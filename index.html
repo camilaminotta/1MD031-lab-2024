@@ -1,97 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-       <title>BestBurger</title> <!--Såhär kommenterar man-->
-       <meta charset="utf-8"/>
-       <link rel="stylesheet" type="text/css" href="/public/css/style.css">
-   </head>
-   <body>
-        <header>
-            <img src="https://images.wsj.net/im-65599456?size=1.5" alt="Restaurant Picture" title="Restaurant">
-            <h1>Welcome to BestBurger Online</h1>
-        </header>
-        <main>
-            <section id="burgerselection">
-                <h2>Choose your burger</h2>
-                <p>This is where you select your burger</p>
-                <div class="burgeroptions">
-                    <div class="burger"> 
-                        <h3>Sweet Truffle Burger</h3>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGYXFpy_tKpmGfeE5rn5V6GgOaYuylzA3Hg&s" alt="Sweet Truffle Burger" title="Sweet Truffle Burger" class="burgerimage">
-                        <ul class="ingredients">
-                            <li>Caramelized onion</li>
-                            <li>Truffle mayo</li>
-                            <li>Bacon</li>
-                        </ul>
-                    </div>
-                    <div class="burger"> 
-                        <h3>Original Burger</h3>
-                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=original" alt="Original Burger" title="Original Burger" class="burgerimage">
-                        <ul class="ingredients">
-                            <li>Cheese</li>
-                            <li>Tomato</li>
-                            <li>Lettuce</li>
-                        </ul>
-                    </div>
-                    <div class="burger"> 
-                        <h3>BBQ Burger</h3>
-                        <img src="https://www.certifiedangusbeef.com/_next/image?url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FAvocado_Bacon_Barbecue_Burger_6395900f58.jpeg&w=1920&q=75" alt="BBQ Burger" title="BBQ Burger" class="burgerimage">
-                        <ul class="ingredients">
-                            <li>Bacon</li>
-                            <li>BBQ sauce</li>
-                            <li>Avocado</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section id="deliveryinfo">
-                <h2>Delivery information</h2>
-                <p>Enter the necessary information for delivery below</p>
-                <p>
-                    <label for="full name">Full name</label><br>
-                    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and lastname">
-                </p>
-                <p>
-                    <label for="email">E-mail</label><br>
-                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-                </p>
-                <p>
-                    <label for="streetname">Street name</label><br>
-                    <input type="text" id="streetname" name="sn" required="required" placeholder="Street name">
-                </p>
-                <p>
-                    <label for="housenumber">House number</label><br>
-                    <input type="number" id="housenumber" name="hn" required="required" placeholder="House number">
-                </p>
-                <p>
-                    <label for="payment">Payment Method</label><be>
-                    <select id="payment" name="pym">
-                        <option selected="selected">Swish</option>
-                        <option>Bankkort</option>
-                        <option>Klarna</option>
-                        <option>Faktura</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="gender">Gender</label><br>
-
-                    <input type="radio" id="female" name="gndr" value="Female">
-                    <label for="female">Female</label><br>
-
-                    <input type="radio" id="male" name="gndr" value="Male">
-                    <label for="male">Male</label><br>
-
-                    <input type="radio" id="nogender" name="gndr" value="Do not wish to provide" checked="checked">
-                    <label for="nogender">Do not wish to provide</label><br>
-                </p>
-            </section>
-        </main>
-        <button type="submit">
-            <img src="https://kramtex.se/wp-content/uploads/2021/03/foodora_logo4.png" alt="Send button" title="Send order" style="width: 30px">
-            Send Order
-        </button>
-    <footer>
-        <hr>
-    </footer>
-   </body>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

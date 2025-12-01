@@ -1,21 +1,18 @@
 [{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+    "name": "Sweet Truffle Burger", 
+    "kCal": 550, 
+    "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGYXFpy_tKpmGfeE5rn5V6GgOaYuylzA3Hg&s",
+    "ingredients": ["Caramelized onion", "Truffle mayo", "Bacon"]
 },
 {
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+    "name": "Original Burger", 
+    "kCal": 400, 
+    "img_url": "https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=original",
+    "ingredients": ["Cheese", "Tomato", "Lettuce"]
 },
 {
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+    "name": "BBQ Burger", 
+    "kCal": 450, 
+    "img_url": "https://www.certifiedangusbeef.com/_next/image?url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FAvocado_Bacon_Barbecue_Burger_6395900f58.jpeg&w=1920&q=75",
+    "ingredients": ["Bacon", "BBQ sauce", "Avocado"]
 }]
