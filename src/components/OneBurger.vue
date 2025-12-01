@@ -1,6 +1,7 @@
 <template>
   <div class="burger"> 
     <h3>{{burger.name}}</h3>
+    <p>{{burger.kCal}} kCal</p>
     <img v-bind:src="burger.img_url" class="burgerimage">
     <ul class="ingredients">
       <li 
@@ -11,6 +12,7 @@
       </li>
     </ul>
     <div>
+      <span>Amount:</span>
       <button type="button" v-on:click="decreaseAmount">-</button>
       {{amountOrdered}}
       <button type="button" v-on:click="increaseAmount">+</button>

@@ -22,22 +22,10 @@
       <p>
         <label for="full name">Full name</label><br>
         <input type="text" id="fullname" v-model="fullname" required="required" placeholder="First- and lastname">
-        {{fullname}}
       </p>
       <p>
         <label for="email">E-mail</label><br>
         <input type="email" id="email" v-model="email" required="required" placeholder="E-mail address">
-        {{email}}
-      </p>
-      <p>
-        <label for="streetname">Street name</label><br>
-        <input type="text" id="streetname" v-model="streetname" required="required" placeholder="Street name">
-        {{streetname}}
-      </p>
-      <p>
-        <label for="housenumber">House number</label><br>
-        <input type="number" id="housenumber" v-model="housenumber" required="required" placeholder="House number">
-        {{housenumber}}
       </p>
       <p>
         <label for="payment">Payment Method</label><br>
@@ -47,7 +35,6 @@
           <option>Klarna</option>
           <option>Faktura</option>
         </select>
-        {{payment}}
       </p>
       <p>
         <label for="gender">Gender</label><br>
@@ -60,8 +47,15 @@
 
         <input type="radio" id="nogender" v-model="gender" value="Do not wish to provide" checked="checked">
         <label for="nogender">Do not wish to provide</label><br>
-        {{gender}}
       </p>
+      <p>Please click on a delivery point on the map below:</p>
+      <div id="mapContainer">
+        <div id="map" v-on:click="setLocation">
+          <div class="target" v-bind:style="{ left: location.x + 'px', top: location.y + 'px'}">
+            T
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <button type="button" v-on:click="sendOrder">
@@ -87,14 +81,6 @@ function MenuItem (name, img_url, kCal, ingredients) {
   this.ingredients = ingredients;
 }
 
-// const burgers = [
-//  new MenuItem("Sweet Truffle Burger", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGYXFpy_tKpmGfeE5rn5V6GgOaYuylzA3Hg&s", 550, ["Caramelized onion", "Truffle mayo", "Bacon"]),
-//  new MenuItem("Original Burger", "https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=original", 400, ["Cheese", "Tomato", "Lettuce"]),
-//  new MenuItem("BBQ Burger", "https://www.certifiedangusbeef.com/_next/image?url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FAvocado_Bacon_Barbecue_Burger_6395900f58.jpeg&w=1920&q=75", 450, ["Bacon", "BBQ sauce", "Avocado"])
-// ];
-
-// console.log(burgers);
-
 export default {
   name: 'HomeView',
   components: {
@@ -105,38 +91,41 @@ export default {
       burgers: menu,
       fullname: '',
       email: '',
-      streetname: '',
-      housenumber: '',
       payment: 'Swish',
       gender: 'Do not wish to provide',
-      orderedBurgers: []
+      orderedBurgers: {},
+      location: {x: 0, y:0}
     }
   },
   methods: {
     getOrderNumber: function () {
       return Math.floor(Math.random()*100000);
     },
-    
-    addOrder: function (event) {
+
+    setLocation: function (event) {
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
-      socket.emit("addOrder", { orderId: this.getOrderNumber(),
-                                details: { x: event.clientX - 10 - offset.x,
-                                           y: event.clientY - 10 - offset.y },
-                                orderItems: ["Beans", "Curry"]
-                              }
-                 );
-    },
+
+      this.location = { x: event.clientX - 10 - offset.x,
+                        y: event.clientY - 10 - offset.y};
+      },
 
     sendOrder: function () {
       console.log('CUSTOMER ORDER');
       console.log('Name:', this.fullname);
       console.log('Email:', this.email);
-      console.log('Street:', this.streetname);
-      console.log('House number:', this.housenumber);
       console.log('Payment:', this.payment);
       console.log('Gender:', this.gender);
-      console.log('Orderes Burgers: ', this.orderedBurgers);
+      console.log('Ordered Burgers: ', this.orderedBurgers);
+      socket.emit("addOrder", { orderId: this.getOrderNumber(),
+                                details: { x: this.location.x,
+                                           y: this.location.y },
+                                orderItems: this.orderedBurgers,
+                                customerInfo: { name: this.fullname, email: this.email,
+                                                payment: this.payment,
+                                                gender: this.gender}
+                              }
+                 );
     },
 
     addToOrder: function (event) {
@@ -180,8 +169,28 @@ export default {
       grid-gap: 10px;
   }
 
-  h1 {
-      font-family: 'Agbalumo';
+  #mapContainer {
+    width: 100%;
+    height: 60vh;
+    overflow: scroll;
+  }
+
+  #map {
+    position: relative;
+    background: url("/img/polacks.jpg");
+    background-size: cover;
+    width: 1920px;
+    height: 1078px;
+  }
+
+  .target {
+    position: absolute;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    width:20px;
+    height:20px;
+    text-align: center;
   }
 
   header {
@@ -199,6 +208,7 @@ export default {
   }
 
   header h1 {
+      font-family: 'Agbalumo';
       position: absolute;
       top: 50px;
       left: 30px;
